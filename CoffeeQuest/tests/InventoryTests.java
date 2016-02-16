@@ -1,18 +1,12 @@
 /**
- * Created by Philip Ni on 2/15/2016.
+ * Unittests for Inventory.java
  */
 
+import java.lang.*;
 import static org.junit.Assert.*;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import org.mockito.*;
-
 public class InventoryTests {
-    @SuppressWarnings("unchecked")
-    
     // This tests that a new inventory is not a null object.
     // A new inventory object should contain three boolean values that are
     // all initialized to false. So, not null.
@@ -49,7 +43,7 @@ public class InventoryTests {
     @Test
     public void testNoSugar() {
         Inventory inv = new Inventory();
-        assertEquals(false, inv.getCreamStatus());
+        assertFalse(inv.getCreamStatus());
     }
     
     // This tests setCoffee(), where the inventory is updated to show
@@ -59,7 +53,7 @@ public class InventoryTests {
     public void testFoundCoffee() {
         Inventory inv = new Inventory();
         inv.setCoffee();
-        assertEquals(true, inv.getCoffeeStatus());
+        assertTrue(inv.getCoffeeStatus());
     }
     
     // This tests setCream(), where the inventory is updated to show
@@ -69,7 +63,7 @@ public class InventoryTests {
     public void testFoundCream() {
         Inventory inv = new Inventory();
         inv.setCream();
-        assertEquals(true, inv.getCreamStatus());
+        assertTrue(inv.getCreamStatus());
     }
     
     // This tests setSugar(), where the inventory is updated to show
@@ -79,7 +73,7 @@ public class InventoryTests {
     public void testFoundSugar() {
         Inventory inv = new Inventory();
         inv.setSugar();
-        assertEquals(true, inv.getSugarStatus());
+        assertTrue(inv.getSugarStatus());
     }
     
     // Tests Inventory's checkWin() win condition.
@@ -92,7 +86,7 @@ public class InventoryTests {
         inv.setCoffee();
         inv.setCream();
         inv.setSugar();
-        assertEquals(true, inv.checkWin());
+        assertTrue(inv.checkWin());
     }
     
     // Tests Inventory's checkWin() lose condition if one item is missing.
@@ -100,11 +94,11 @@ public class InventoryTests {
     // The method should return false because not all ingredients have been
     // obtained.
     @Test
-    public void testLoseForTwoItems() {
+    public void testLoseWithTwoItems() {
         Inventory inv = new Inventory();
         inv.setCoffee();
         inv.setSugar();
-        assertEquals(false, inv.checkWin());
+        assertFalse(inv.checkWin());
     }
     
     // Tests Inventory's checkWin() lose condition if two items are missing.
@@ -112,10 +106,10 @@ public class InventoryTests {
     // The method should return false because not all ingredients have been
     // obtained.
     @Test
-    public void testLoseForTwoItems() {
+    public void testLoseWithOneItem() {
         Inventory inv = new Inventory();
         inv.setCream();
-        assertEquals(false, inv.checkWin());
+        assertFalse(inv.checkWin());
     }
     
     // Tests Inventory's checkWin() lose condition if all items are missing.
@@ -123,8 +117,44 @@ public class InventoryTests {
     // The method should return false because not all ingredients have been
     // obtained.
     @Test
-    public void testLoseForTwoItems() {
+    public void testLoseIfEmpty() {
         Inventory inv = new Inventory();
-        assertEquals(false, inv.checkWin());
+        assertFalse(inv.checkWin());
+    }
+    
+    // Tests showStatus() to if player has all items in inventory.
+    // The method should return a string that indicates that coffee, sugar, and
+    // cream have all been retrieved.
+    @Test
+    public void testShowStatusAll() {
+        Inventory inv = new Inventory();
+        inv.setCoffee();
+        inv.setCream();
+        inv.setSugar();
+        String expected = "You have a cup of delicious coffee.\n" + "You have some fresh cream.\n" + "You have some tasty sugar.\n";
+        assertEquals(expected, inv.showStatus());
+    }
+    
+    // Tests showStatus() if player has no items collected in inventory.
+    // The method should return a string that indicates that coffee, cream, and
+    // sugar are missing.
+    @Test
+    public void testShowStatusNone() {
+        Inventory inv = new Inventory();
+        String expected = "YOU HAVE NO COFFEE!\n" + "YOU HAVE NO CREAM!\n" + "YOU HAVE NO SUGAR!\n";
+        assertEquals(expected, inv.showStatus());
+    }
+    
+    // Tests showStatus() if player has some items collected in inventory.
+    // If the player has only collected cream and sugar, but no coffee, the
+    // status provided from showStatus() should return a string that indicates
+    // that there is not coffee, but there is cream and sugar.
+    @Test
+    public void testShowStatusSome() {
+        Inventory inv = new Inventory();
+        inv.setCream();
+        inv.setSugar();
+        String expected = "YOU HAVE NO COFFEE!\n" + "You have some fresh cream.\n" + "You have some tasty sugar.\n";
+        assertEquals(expected, inv.showStatus());
     }
 }
