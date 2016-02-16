@@ -1,5 +1,3 @@
-import java.util.*;
-import java.io.*;
 import java.lang.*;
 
 /*  This keeps track of the player's inventory.
@@ -42,7 +40,7 @@ public class Inventory {
     }
 
     //prints the current status of the inventory
-    public void printStatus() {
+    public void showInventory() {
         //show coffee status
         if(coffee == true) {
             System.out.println("You have a cup of delicious coffee.");
