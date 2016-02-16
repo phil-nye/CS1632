@@ -12,6 +12,18 @@ public class Player {
         curPos = 0;
     }
     
+    // list available instructions and its function
+    public String help() {
+        String h = "HELP (case insensitive):\n" +
+                                   "H - list available instructions and its function\n" +
+                                   "I - show inventory status\n" +
+                                   "N - move through the north door if possible\n" +
+                                   "S - move through the south door if possible\n" +
+                                   "L - look at the contents of a room for items; prints room description\n" +
+                                   "D - drink whatever you have in your inventory; ends the game\n";
+        return h;
+    }
+    
     // sets the current position of the player;
     public void setCurPos(int pos) {
         curPos = pos;
@@ -58,7 +70,7 @@ public class Player {
         rm2.setDescription("You see a Refinanced room.\n" +
                                    "It has a Bright lamp.\n" +
                                    "A Dead door leads North.\n" +
-                                   "A Smart Door leads South.\n");
+                                   "A Smart door leads South.\n");
         rm2.setItem("coffee");  // rm2 has the coffee
         rm2.setNorth();
         rm2.setSouth();
