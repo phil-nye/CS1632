@@ -27,9 +27,9 @@ public class CoffeeQuest {
             
             System.out.println(rm.getDescription());    //print description
             System.out.print("INSTRUCTIONS (N,S,L,I,D) > ");    //give user prompt for input
-            System.out.println();
             
             String instr = kbd.nextLine();
+            System.out.println();
             instr = instr.toLowerCase();    //case-insensitive
             
             // Skip everything below and just loop if invalid instruction
@@ -48,7 +48,6 @@ public class CoffeeQuest {
                 
                 //collect item if possible
                 String item = rm.getItem();
-                System.out.println("Item: " + item);
                 if(item != null && !item.equals("") && 
                            !item.isEmpty()) {
                     System.out.println("There might be something here...");
@@ -80,7 +79,7 @@ public class CoffeeQuest {
             }
             else if(instr.equals("d")) {    //take a drink of whatever you have
                 //print inventory
-                System.out.println(inv.showStatus() + "\n");
+                System.out.println(inv.showStatus());
                 
                 if(inv.checkWin()) {    //you have all the ingredients; win
                     System.out.println("You drink the beverage and are ready to study!\n");
