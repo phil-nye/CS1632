@@ -80,6 +80,8 @@ public class Inventory {
     // used for the "drink" instruction; checks inventory for all items
     public boolean checkWin() {
         if(coffee == true && cream == true && sugar == true) {
+            System.out.println("You drink the beverage and are ready to study!\n");
+            System.out.println("You win!");
             return true;
         }
         return false;

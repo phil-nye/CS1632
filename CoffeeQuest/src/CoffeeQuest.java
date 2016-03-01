@@ -84,9 +84,7 @@ public class CoffeeQuest {
                 System.out.println(inv.showStatus());
             
                 if(inv.checkWin()) {    //you have all the ingredients; win
-                    System.out.println("You drink the beverage and are ready to study!\n");
-                    System.out.println("You win!");
-                    System.exit(0);
+                   System.exit(0);
                 }
                 else {  //you are missing ingredients; lose
                     //check for what you are missing and provide a message
