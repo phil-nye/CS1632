@@ -40,7 +40,7 @@ public class StackOverflowUsers {
     // Close browser windows at the end of test runs
     @After
     public void tearDown() throws Exception {
-        //driver.close();
+        driver.close();
     }
     
     // Helper method to wait for pages/actions to finish loading
