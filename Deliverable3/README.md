@@ -5,7 +5,6 @@ CS 1632 - Deliverable 3: Web Testing with BDD
 <p>Created by Philip Ni (pcn7)</p>
 <p>CS1632 Software Testing</p>
 <p>University of Pittsburgh</p>
-<br>
 <p>Project link: https://github.com/phil-nye/CS1632/tree/master/Deliverable3</p>
 <br>
 <p>Files:</p>
