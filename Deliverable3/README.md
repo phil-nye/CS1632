@@ -24,6 +24,8 @@ CS 1632 - Deliverable 3: Web Testing with BDD
             deliverable3.docx (written project report with summar, issues, and screenshots)
 
 <p>Important Notes:</p>
+    User stories and senarios are defined in the comments in the unit test source code.
+
     Using -
         "selenium-server-standalone-2.52.0.jar"
         "junit-4.12.jar"
