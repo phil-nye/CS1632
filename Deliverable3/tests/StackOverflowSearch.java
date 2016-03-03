@@ -82,6 +82,9 @@ public class StackOverflowSearch {
         }
     }
     
+    // Given that I am on the homepage
+    // When I enter a keyword into the search bar in the topbar
+    // Then the results should show results with, at a minimum, the score I defined
     @Test
     public void testSearchByScore() {
         try {
