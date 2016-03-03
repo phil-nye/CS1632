@@ -124,7 +124,6 @@ public class StackOverflowLogin {
             // Get error balloon message
             WebElement errorBalloon = driver.findElement(By.className("message-text"));
             String messageText = errorBalloon.getText();
-            System.out.println(messageText);
             assertEquals("We could not find an account for that email address.", messageText);
         }
         catch(NoSuchElementException nsee) {

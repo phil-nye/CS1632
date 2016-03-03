@@ -109,7 +109,7 @@ public class StackOverflowTags {
             //make sure ".a" tag is first
             WebElement tag = driver.findElement(By.cssSelector("#tags-browser > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)"));
             String firstTag = tag.getText();
-            System.out.println("first tag: " + firstTag);
+            
             
             assertEquals(".a", firstTag);
         }
@@ -158,8 +158,6 @@ public class StackOverflowTags {
             
             //get tag name and make sure that it contains search word in it
             WebElement tag = driver.findElement(By.cssSelector("a.post-tag"));
-            
-            System.out.println("Tag: " + tag.getText());
             
             assertTrue(tag.getText().contains("selenium"));
         }
