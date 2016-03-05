@@ -1,0 +1,32 @@
+How to manually compile Deliverable 2 (CoffeeQuest):
+
+Go to https://github.com/phil-nye/CS1632/tree/master/ and clone the "CoffeeQuest" directory
+    *Or you could just clone the entire "CS1632" repository
+
+Select the "CoffeeQuest" directory
+    cd [path]/"CoffeeQuest"
+
+From the "CoffeeQuest" directory, do the following-
+    Compiling "Coffee Quest" drivers and resources (just copy and paste commands):
+        javac -d "./" src/*.java
+        javac -d "./" -cp ./:./junit-4.12.jar:./mockito-all-1.10.19.jar tests/*.java
+
+        or
+
+        IF YOU ARE LAZY JUST RUN THE "MakeMe.sh" SCRIPT:
+            bash MakeMe.sh
+
+    Running JUnit Tests:
+        java -cp ./:[path]/junit-4.12.jar:[path]/mockito-all-1.10.19.jar org.junit.runner.JUnitCore InventoryTests RoomTests PlayerTests
+
+        or
+
+        IF YOU ARE LAZY JUST RUN THE "TestMe.sh" SCRIPT:
+            bash TestMe.sh
+
+        * NOTE: Individual tests don't print to screen.
+
+    Running CoffeeQuest:
+        java CoffeeQuest
+
+Remove all *.class files if you want to recompile
