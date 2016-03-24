@@ -1,6 +1,5 @@
 <p>University of Pittsburgh</p>
-<p>Project link: https://github.com/phil-nye/CS1632/tree/master/Deliverable3</p>
-<p>Test Site: http://stackoverflow.com (Stack Overflow)</p>
+<p>Project link: https://github.com/phil-nye/CS1632/tree/master/Deliverable4</p>
 <br>
 <p>Files:</p>
     /CS1632/Deliverable3
