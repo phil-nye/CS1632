@@ -17,6 +17,8 @@ import org.junit.Test;
  */
 
 public class JavaArraysTests {
+
+	private static final String HashMap = null;
 	int intArr[][];
     
     //Generate 100 random int arrays
