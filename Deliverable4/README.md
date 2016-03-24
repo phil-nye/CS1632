@@ -1,3 +1,9 @@
+-------------------------------------------------
+CS 1632 - Deliverable 4: Property-Based Testing
+-------------------------------------------------
+
+<p>Created by Philip Ni (pcn7)</p>
+<p>CS1632 Software Testing</p>
 <p>University of Pittsburgh</p>
 <p>Project link: https://github.com/phil-nye/CS1632/tree/master/Deliverable4</p>
 <br>
