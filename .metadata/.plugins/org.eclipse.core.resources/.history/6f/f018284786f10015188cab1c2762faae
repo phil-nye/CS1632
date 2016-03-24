@@ -1,0 +1,130 @@
+import static org.junit.Assert.*;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class JavaArraysTests {
+
+	private static final String HashMap = null;
+	int intArr[][];
+    
+    //Generate 100 random int arrays
+    private void createArrays() {
+        Random rndm = new Random();
+        intArr = new int[100][];	//100 int arrays
+        int length;
+        for(int i = 0; i < 100; i++) {
+            length = rndm.nextInt(10000) + 1;    //length should be between 1 and 10,000
+            intArr[i] = new int[length];
+            for(int j = 0; j < length; j++) {
+                intArr[i][j] = rndm.nextInt(100000) + 1;  //generate a random number between 1 and 100,000
+            }
+        }
+    }
+
+    //Setup randomly generated arrays
+    @Before
+    public void setup() {
+        createArrays();
+    }
+    
+    // Test array sort: size before sorting should be the same
+    // as the size after sorting
+    @Test
+    public void sortSizeTest() {
+        for(int i = 0; i < intArr.length; i++) {
+        	int originalCopy[] = Arrays.copyOf(intArr[i], intArr[i].length);	//create deep copy of original
+        	Arrays.sort(intArr[i]);	//sort array
+        	
+        	assertEquals(originalCopy.length, intArr[i].length);
+        }
+    }
+
+    // Test array sort: sorting arrays with the same content (e.g. the same copy) should
+    // result in the same sorted array
+    @Test
+    public void sortConsistencyTest() {
+    	for(int i = 0; i < intArr.length; i++) {
+    		int originalCopy[] = Arrays.copyOf(intArr[i], intArr[i].length);	//create deep copy of original
+    		Arrays.sort(intArr[i]);	//sort original array
+    		Arrays.sort(originalCopy);	//sort copy array
+    		
+    		for(int j = 0; j < originalCopy.length; j++) {	//compare elements in original are same position as copy
+    			assertEquals(intArr[i][j], originalCopy[j]);
+    		}
+    	}
+    }
+    
+    // Test array sort: there should be the same exact content in the sorted array as the unsorted array
+    // (although in a different order)
+    @Test
+    public void sortSameContentTest() {
+    	for(int i = 0; i < intArr.length; i++) {
+    		int originalCopy[] = Arrays.copyOf(intArr[i], intArr[i].length);	//create deep copy of original
+    		Arrays.sort(intArr[i]);	//sort array
+    		
+    		////keys are unique entries; values are total number of occurrences in the array
+    		Map<Integer, Integer> originalHM = new HashMap<Integer, Integer>();
+    		Map<Integer, Integer> copyHM = new HashMap<Integer, Integer>();
+    		
+    		//setting up hashmaps
+    		for(int j = 0; j < intArr[i].length; j++) {
+    			//generate hashmap for copy
+    			if(copyHM.containsKey(originalCopy[j])) {	//if key exists
+    				copyHM.put(originalCopy[j], copyHM.get(originalCopy[j]) + 1);	//increment value
+    			}
+    			else {	
+    				copyHM.put(originalCopy[j], 1);	//if key does not exit; init to 1
+    			}
+    			
+    			//generate hashmap for original
+    			if(originalHM.containsKey(intArr[i][j])) {
+    				originalHM.put(intArr[i][j], originalHM.get(intArr[i][j]) + 1);	//increment value
+    			}
+    			else {
+    				originalHM.put(intArr[i][j], 1);	//if key does not exit; init to 1
+    			}
+    		}
+    		
+    		//compare hashmaps; the hashmaps should be the same
+    		assertTrue(copyHM.equals(originalHM));
+    	}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
