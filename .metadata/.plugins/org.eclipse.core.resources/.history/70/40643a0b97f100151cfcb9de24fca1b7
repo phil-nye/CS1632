@@ -116,19 +116,6 @@ public class JavaArraysTests {
     		}
     	}
     }
-    
-    // Test array sort: sorting gives the correct ascending order
-    @Test
-    public void sortOrderTest() {
-    	for(int i = 0; i < intArr.length; i++) {
-    		Arrays.sort(intArr[i]);	//sort array
-    		
-    		//make sure that an entry is less than its proceeding entry
-    		for(int j = 1; j < intArr[i].length; j++) {
-    			assertTrue(intArr[i][j] >= intArr[i][j-1]);
-    		}
-    	}
-    }
 }
 
 
