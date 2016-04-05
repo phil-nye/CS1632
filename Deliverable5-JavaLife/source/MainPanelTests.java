@@ -236,7 +236,7 @@ public class MainPanelTests {
 		}
 	}
 	
-	// run continuously on a map that has only living cells;
+	// run continuously on a map that has a specific pattern of cells;
 	// should result in a map that has all three colors at the end (gray, green, red)
 	// testing on a 5x5 map for ease
 	@Test
