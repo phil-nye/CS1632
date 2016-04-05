@@ -1,8 +1,10 @@
 # JavaLife (Deliverable 5)
-Created by Philip Ni
-CS1632 Software Quality Assurance
+Created by Philip Ni<br>
+CS1632 Software Quality Assurance<br>
 University of Pittsburgh
 
 <br>
 Notes:
-> "src" directory contains all source code (only MainPanel.java, Cell.java, MainPanelTests.java, and CellTests.java have been modified for this project)
+> "source" directory contains all source code (only MainPanel.java, Cell.java, MainPanelTests.java, and CellTests.java have been modified for this project)
+<br><br>
+> I used JUnit 4 and VirtualVM throughout this project
