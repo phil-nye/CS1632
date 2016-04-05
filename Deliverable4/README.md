@@ -8,7 +8,7 @@ CS 1632 - Deliverable 4: Property-Based Testing
 <p>Project link: https://github.com/phil-nye/CS1632/tree/master/Deliverable4</p>
 <br>
 <p>Files:</p>
-    /CS1632/Deliverable3
+    /CS1632/Deliverable4
         /src -
             JavaArraysTests.java
         README.md (this document)
