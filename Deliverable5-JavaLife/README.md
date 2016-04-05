@@ -1,6 +1,6 @@
 # JavaLife (Deliverable 5)
-Created by Philip Ni
-CS1632 Software Quality Assurance
+Created by Philip Ni<br>
+CS1632 Software Quality Assurance<br>
 University of Pittsburgh
 
 <br>
