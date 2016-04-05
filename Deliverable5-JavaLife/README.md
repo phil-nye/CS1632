@@ -5,4 +5,5 @@ University of Pittsburgh
 
 <br>
 Notes:
-> "src" directory contains all source code (only MainPanel.java, Cell.java, MainPanelTests.java, and CellTests.java have been modified for this project)
+> "source" directory contains all source code (only MainPanel.java, Cell.java, MainPanelTests.java, and CellTests.java have been modified for this project)
+> I used JUnit 4 and VirtualVM throughout this project
