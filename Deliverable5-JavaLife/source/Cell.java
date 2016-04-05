@@ -39,7 +39,7 @@ public class Cell extends JButton {
 		return (text.equals("X"));
 	}
 
-	// REFACTOR:
+	// OLD VERSION:
 	// for loop is completely unnecessary;
 	// all you really need is the text from currentState;
 	// toReturn will be redundant
@@ -60,7 +60,7 @@ public class Cell extends JButton {
 		}
 	}
 	
-	// NEW VERSIONS:
+	// NEW VERSION:
 	// just get the text from UI and determine if it's an "X" or not
 	public String toString() {
 		String currentState = getText();
